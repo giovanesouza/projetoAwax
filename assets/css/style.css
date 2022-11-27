@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+/* HEADER */
+header {
+    height: 100px;
+    background-color: #000;
+
+    color: #fff;
+}
+
+.header {
+    /* LARGURA MÁXIMA PARA O HEADER - CASO O MONITOR TENHA LARGURA INFERIOR, ELE DIMINUI AUTOMATICAMENTE */
+    max-width: 1140px;
+    height: 100px;
+
+    /* ALINHA A DIV .HEADER AO CENTRO */
+    margin: auto;
+
+    display: flex;
+    /* CENTRALIZA VERTICALMENTE LOGO E MENU */
+    align-items: center;
+}
+
+/* ÁREA DA LOGO */
+.logo {
+    width: 80px;
+}
+
+.logoimg {
+    width: 80px;
+    height: 80px;
+    background-color: #b28756;
+}
+
+/* ÁREA MENU - OCUPA TODO O RESTANTE DA ÁREA DISPONÍVEL (COM A REDUÇÃO DOS 80PX DA LOGO) */
+.menu {
+    flex: 1;
+
+    /* ALINHAMENTO DO MENU à DIREITA */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul,
+.menu li {
+    /* REMOVE ICON LIST */
+    list-style: none;
+
+}
+
+/* MUDA ORIETANÇÃO DA UL DE BLOCO PARA LINHA */
+.menu ul {
+    display: flex;
+}
+
+/* ADICIONA PROPRIEDADES AO LINK */
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    height: 100px;
+    padding: 0 10px;
+
+    /* ALTERA O DISPLAY DO LINK PERMITINDO MANIPULÁ-LO - ALTERAR DIMENSÕES */
+    display: flex;
+    align-items: center;
+
+    border-bottom: 5px solid #000;
+
+}
+
+.menu li a:hover {
+    border-bottom: 5px solid #b28756;
+}
+
+/* DEIXA UMA BORDA BOTTOM NO LINK ATIVO */
+.menu .active a {
+    border-bottom: 5px solid #b28756;
+}
