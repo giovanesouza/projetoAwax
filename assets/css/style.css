@@ -7,6 +7,7 @@
 body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 13px;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -92,6 +93,22 @@ header {
 }
 
 
+/* BOTÃO */
+.button {
+    /* PARA PERMITIR MANIPULAR DIMENSÕES, ADD PADDING, ETC. */
+    display: inline-block;
+    background-color: #b28756;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top: 30px;
+
+    border-radius: 20px;
+}
+
 /* BANNER */
 
 .banner {
@@ -163,22 +180,6 @@ header {
 }
 
 
-/* BOTÃO DO SLIDE */
-.banner a {
-    /* PARA PERMITIR MANIPULAR DIMENSÕES, ADD PADDING, ETC. */
-    display: block;
-    background-color: #b28756;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin-top: 30px;
-
-    border-radius: 20px;
-}
-
 /* INDICADOR DE SLIDE */
 .banner .sliders-pointers {
     /* PEGA A ÁREA INTEIRA */
@@ -214,4 +215,131 @@ header {
 /* SLIDE ATIVO */
 .banner .pointer.active {
 background-color: #b28756;
+}
+
+/* FORMATAÇÃO ÁREA PADRÃO */
+.default {
+    width: 100vw;
+    padding: 50px 0;
+}
+
+.default .section-title, .default .section-desc  {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.default .section-title {
+    font-size: 20px;
+}
+
+.default .section-desc {
+    font-size: 12px;
+    color: #ccc;
+    margin: 10px 0 40px 0;
+
+}
+
+.default .section-body {
+    max-width: 1140px;
+    margin: auto;
+
+
+}
+
+/* APLICA EFEITO APENAS NOS ELEMENTOS QUE TIVEREM AMBAS CLASSES */
+/* CONFIGURAÇÃO LIGHT */
+.default.light {
+    background-color: #f7f7f7;
+}
+
+.default.light .section-title, .default.light .section-body {
+    color: #000;
+}
+
+/* CONFIGURAÇÃO DARK */
+.default.dark {
+    background-color: #000;
+}
+
+.default.dark .section-title, .default.dark .section-body {
+    color: #f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS DE ÁREAS ESPECÍFICAS */
+
+/* ÁREA ABOUT US (SOBRE NÓS) */
+.section-aboutUs {
+    display: flex;
+}
+
+.section-aboutUs--left {
+    flex: 1;
+}
+
+.section-aboutUs--left p {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.section-aboutUs--right {
+    width: 520px;
+    text-align: center;
+}
+
+
+.section-aboutUs--right img {
+    width: 480px;
+    box-shadow: 0 5px 10px #333;
+}
+
+
+/* DEIXA OS SERVICES LADO A LADO */
+.section-services {
+    display: flex;
+}
+
+/* DEFINE TAMANHO IGUAL PARA TODOS OS SERVICES  */
+.section-service {
+    flex: 1;
+    text-align: center;
+
+    padding: 15px;
+
+    /* APLICA BORDA APENAS À DIREITA - EVITA A SOBREPOSIÇÃO */
+    border-right: 1px solid #333;
+}
+
+.section-service:first-child {
+    border-left: 1px solid #333;
+
+}
+
+.section-service h4 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+}
+
+.section-service p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
 }
