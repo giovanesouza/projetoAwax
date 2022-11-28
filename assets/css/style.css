@@ -39,6 +39,7 @@ header {
     width: 80px;
     height: 80px;
     background-color: #b28756;
+    border-radius: 40px;
 }
 
 /* ÁREA MENU - OCUPA TODO O RESTANTE DA ÁREA DISPONÍVEL (COM A REDUÇÃO DOS 80PX DA LOGO) */
@@ -81,9 +82,136 @@ header {
 
 .menu li a:hover {
     border-bottom: 5px solid #b28756;
+    color: #ccc;
 }
 
 /* DEIXA UMA BORDA BOTTOM NO LINK ATIVO */
 .menu .active a {
     border-bottom: 5px solid #b28756;
+    color: #ccc;
+}
+
+
+/* BANNER */
+
+.banner {
+    /* CÁLCULO PARA DEIXAR O HEADER + BANNER PREENCHENDO 100% DA ALTURA DO DISPOSITIVO */
+    height: calc(100vh - 100px);
+
+    /* COR PADRÃO, ENQUANTO A IMAGEM CARREGA A COR APARECE */
+    background-color: #333;
+
+    /* IMAGEM DE BG */
+    background-image: url('../images/bg.jpg');
+
+    /* AJUSTE DE FORMA A PREENCHER TODO O ESPAÇO */
+    background-size: cover;
+
+    /* FOCA NA PARTE INFERIOR DA IMAGEM */
+    background-position: bottom;
+
+    /* REMOVE A BARRA DE ROLAGEM DO SLIDERS */
+    overflow: hidden;
+
+}
+
+/* SLIDE DO BANNER */
+.banner .sliders {
+    /* LARGURA DE 10 TELAS => 10 Slides COM LARGURA 100VW */
+    width: 1000vw;
+    /* ALTURA 100% DA ÁREA DISPONÍVEL */
+    height: 100%;
+}
+
+.banner .slide {
+    /* LARGURA DE 1 SLIDE */
+    width: 100vw;
+    /* ALTURA 100% DA ÁREA DISPONÍVEL */
+    height: 100%;
+
+    /* POSSIBILITA A CONFIGURAÇÃO DE LARGURA E ALTURA E DEIXA OS SLIDES LADO A LADO */
+    display: inline-block;
+
+    /* PRETO COM TRANSPARÊNCIA */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* CONTEÚDO DO SLIDE */
+.banner .slideArea {
+    /* ALINHAMENTO AO CENTRO */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.banner h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.banner h1 span {
+    color: #b28756
+}
+
+.banner h2 {
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+/* BOTÃO DO SLIDE */
+.banner a {
+    /* PARA PERMITIR MANIPULAR DIMENSÕES, ADD PADDING, ETC. */
+    display: block;
+    background-color: #b28756;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top: 30px;
+
+    border-radius: 20px;
+}
+
+/* INDICADOR DE SLIDE */
+.banner .sliders-pointers {
+    /* PEGA A ÁREA INTEIRA */
+    width: 100vw;
+    height: 20px;
+
+    /* FAZ O POINTER APARECER INDEPENDENTE DA ÁREA */
+    position: absolute;
+
+    /* COLOCA O POINTER DENTRO DA ÁREA DO SLIDE */
+    margin-top: -50px;
+
+    /* ALINHAMENTO DO POINTER */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* POINTERS - BOLINHAS DO POINTER (INDICADOR DE SLIDE) */
+.banner .pointer {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    /* RADIUS DE NO MÍNIMO 50% DO TAMANHO DA ÁREA -> VIRA UM CÍRCULO */
+    border-radius: 8px;
+
+    /* ESPAÇAMENTO ENTRE POINTERS */
+    margin: 0 5px;
+
+    cursor: pointer;
+}
+
+/* SLIDE ATIVO */
+.banner .pointer.active {
+background-color: #b28756;
 }
