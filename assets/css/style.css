@@ -214,7 +214,7 @@ header {
 
 /* SLIDE ATIVO */
 .banner .pointer.active {
-background-color: #b28756;
+    background-color: #b28756;
 }
 
 /* FORMATAÇÃO ÁREA PADRÃO */
@@ -223,7 +223,8 @@ background-color: #b28756;
     padding: 50px 0;
 }
 
-.default .section-title, .default .section-desc  {
+.default .section-title,
+.default .section-desc {
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
@@ -253,7 +254,8 @@ background-color: #b28756;
     background-color: #f7f7f7;
 }
 
-.default.light .section-title, .default.light .section-body {
+.default.light .section-title,
+.default.light .section-body {
     color: #000;
 }
 
@@ -262,7 +264,8 @@ background-color: #b28756;
     background-color: #000;
 }
 
-.default.dark .section-title, .default.dark .section-body {
+.default.dark .section-title,
+.default.dark .section-body {
     color: #f7f7f7;
 }
 
@@ -335,11 +338,134 @@ background-color: #b28756;
     margin-top: 20px;
     text-transform: uppercase;
     font-size: 18px;
-    
+
 }
 
 .section-service p {
     margin-top: 10px;
     font-size: 13px;
     color: #999;
+}
+
+
+
+
+
+
+
+
+.section-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.section-projects--filters {
+    border: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 30px;
+
+    /* ADEQUA O TAMANHO AO CONTEÚDO */
+    display: inline-block;
+    padding: 0 20px;
+
+}
+
+/* FORMATAÇÃO DA LISTA */
+.section-projects--filters ul,
+.section-projects--filters li {
+    list-style: none;
+}
+
+.section-projects--filters li {
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #555;
+    border-left: 1px solid #ccc;
+    border-bottom: 3px solid #eee;
+    cursor: pointer;
+}
+
+/* APLICA O BORDER BOTTOM AO PASSAR O MOUSE E NO ITEM QUE TIVER A CLASS ACTIVE */
+.section-projects--filters li:hover,
+.section-projects--filters li.active {
+    border-bottom: 3px solid #b28756;
+}
+
+.section-projects--filters li:first-child {
+    border-left: 0;
+}
+
+/* DEFINE O TAMANHO DA ÁREA DE FOTOS */
+.section-projects--photos {
+    /* MONITORES PEQUENOS USAM 100VW */
+    width: 100vw;
+
+    /* MONITORES MUITO GRANDE - USAM ESSA LARGURA */
+    max-width: 1140px;
+
+    margin-top: 20px;
+
+    display: flex;
+    /* CASO A PHOTO NÃO CAIBA NA LINHA, VAI PARA PRÓXIMA (QUEBRA) */
+    flex-wrap: wrap;
+
+    /* MANTÉM AS FOTOS SEMPRE CENTRALIZADAS */
+    justify-content: center;
+
+}
+
+/* UNIDADE */
+.section-projects--photo {
+    /* TAMANHO SUFICIENTE PARA CABER 1 FOTO POR LINHA EM UM CELULAR */
+    width: 280px;
+
+}
+
+.section-projects--photoArea {
+    margin: 10px;
+
+    /* AO ALTERAR O VALOR DA LARGURA E ALTRA, OS FILHOS QUE TÊM INHERIT SÃO ALTERADOS AUTOMATICAMENTE */
+    width: 260px;
+    height: 160px;
+}
+
+.section-projects--photoArea img {
+    /* HERDA O TAMANHO DO ITEM ANTERIOR (PHOTO AREA) */
+    width: inherit;
+    height: inherit;
+}
+
+/* INFORMAÇÕES DA FOTO - *PHOTOINFO TEM QUE FICAR ACIMA DA FOTO* */
+.section-projects--photoInfo {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* HERDA O TAMANHO DO ITEM ANTERIOR (PHOTO AREA) */
+    width: inherit;
+    height: inherit;
+
+    /* OCULTA A INFORMAÇÃO  */
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+
+}
+
+.section-projects--photoInfo h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* AO PASSAR O MOUSE EM PHOTOAREA, ALTERA AS PROPRIEDADES DE PHOTOINFO */
+.section-projects--photoArea:hover .section-projects--photoInfo {
+    display: flex;
 }
