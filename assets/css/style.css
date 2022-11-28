@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 13px;
     overflow-x: hidden;
 }
@@ -468,4 +469,150 @@ header {
 /* AO PASSAR O MOUSE EM PHOTOAREA, ALTERA AS PROPRIEDADES DE PHOTOINFO */
 .section-projects--photoArea:hover .section-projects--photoInfo {
     display: flex;
+}
+
+
+
+
+
+
+/* ADICIONA IMAGEM NO BG */
+.bg-team {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    /* ZERA O PADDING DA SECTION */
+    padding: 0;
+}
+
+.section-teamArea {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px 0;
+}
+
+
+.section-team {
+    /* REMOVE A ÁREA DESPERDIÇADA */
+    overflow: hidden;
+
+    max-width: 880px;
+
+    /* ALINHA AO CENTRO */
+    margin: auto;
+}
+
+/* SLIDE DO TEAM */
+.section-team .sliders {
+    /* LARGURA DE 10 TELAS => 10 Slides COM LARGURA 100VW */
+    width: 1000vw;
+    /* ALTURA 100% DA ÁREA DISPONÍVEL */
+    height: 100%;
+}
+
+.section-team .slide {
+    /* LARGURA DE 1 SLIDE */
+    width: 280px;
+    /* ALTURA 100% DA ÁREA DISPONÍVEL */
+    height: 100%;
+
+    min-height: 300px;
+
+    /* POSSIBILITA A CONFIGURAÇÃO DE LARGURA E ALTURA E DEIXA OS SLIDES LADO A LADO */
+    display: inline-block;
+
+    background-color: #fff;
+    margin-right: 20px;
+
+}
+
+
+
+/* CONTEÚDO DO SLIDE */
+.section-team .slideArea {
+    /* ALINHAMENTO AO CENTRO */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    padding: 30px;
+}
+
+
+
+/* INDICADOR DE SLIDE */
+.section-teamArea .sliders-pointers {
+
+    margin-top: 30px;
+
+    height: 20px;
+
+    /* ALINHAMENTO DO POINTER */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* POINTERS - BOLINHAS DO POINTER (INDICADOR DE SLIDE) */
+.section-teamArea .pointer {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    /* RADIUS DE NO MÍNIMO 50% DO TAMANHO DA ÁREA -> VIRA UM CÍRCULO */
+    border-radius: 8px;
+
+    /* ESPAÇAMENTO ENTRE POINTERS */
+    margin: 0 5px;
+
+    cursor: pointer;
+}
+
+/* SLIDE ATIVO */
+.section-teamArea .pointer.active {
+    background-color: #b28756;
+}
+
+
+.section-team--avatar {
+    width: 150px;
+    height: auto;
+}
+
+.section-team--name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 30px;
+}
+
+
+.section-team--role {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+
+}
+
+.section-team--social {
+    display: flex;
+    margin: 20px;
+}
+
+/* FORMATAÇÃO LINK - REDES SOCIAIS */
+.section-team--social a {
+    /* PERMITE MANIPULAR DIMENSÕES */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 13px;
+    margin-right: 10px;
+}
+
+.section-team--social a:hover {
+    background-color: #b28756;
 }
