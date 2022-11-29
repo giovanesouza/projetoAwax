@@ -47,6 +47,7 @@ header {
 /* ICON MENU */
 .menu-opener {
     display: none;
+    cursor: pointer;
 }
 
 
